@@ -53,15 +53,9 @@
         'toggleSide'
       ])
     },
-    beforeRouteEnter(to, from, next) {
-      console.log('before router')
-      next(vm => {
-        vm.$store.dispatch('getMenu')
-      })
-    },
+
     methods: {
       handleClick(id) {
-        console.log('触发点击事件')
         this.$store.commit('CLICK_MENU', id)
       },
       changeMenu() {

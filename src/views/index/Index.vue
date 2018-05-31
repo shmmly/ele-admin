@@ -1,11 +1,11 @@
 <template>
   <div class="health-index">
     <Health-header/>
-    <el-row>
-      <el-col :span="4">
+    <el-row class="health-content">
+      <el-col :span="4" class="health-content">
         <SideBar/>
       </el-col>
-      <el-col :span="20">
+      <el-col :span="20" class="health-content">
         <Content/>
       </el-col>
     </el-row>
@@ -16,7 +16,7 @@
 <script>
   import HealthHeader from '@/components/header/HealthHeader'
   import SideBar from '@/components/sidebar/SideBar'
-  import Content from '@/views/Content'
+  import Content from '@/views/content/Content'
 
   export default {
     name: "Index",
@@ -26,7 +26,6 @@
       Content
     },
     beforeRouteEnter(to, from, next) {
-      console.log('before router')
       next(vm => {
         vm.$store.dispatch('getMenu')
       })
